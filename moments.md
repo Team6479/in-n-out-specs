@@ -220,6 +220,5 @@ The list will be formatted with each MID on its own line, with the oldest first.
 [See Also](endpoints.md)
 
 The Client must generate the JSON data of the Moment, according to the specifications of this document. The JSON data should be minified.
-The Client must also
-
-To submit a Moment, send a POST request to `/api/v1/moment/`*`MID`*.
+The Client must then sign the JSON data using the OpenPGP associated with the Actor's most recent OpenPGP public key.
+That signed data must be sent as the body of a POST request to `/api/v1/moment/`*`MID`*.
