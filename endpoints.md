@@ -1,6 +1,6 @@
 # Endpoints (v1.0.0)
 This document serves as a quick reference for the endpoints, along with their respective functions, of an In-N-Out compatible server.
-All endpoints are relative to `/api/v1`, so if the URL is listed as `/version`, that expands to `/api/v1/version`.
+All endpoint URLs are relative to `/api/v1`, so if the URL is listed as `/version`, that expands to `/api/v1/version`.
 
 With the exception of `/version` and `/instant/`*`EID`*`/key/*`, GET requests take at least the URL parameter `inq` (the id of the Inquisitor, which must have a permission level of at least 1) and their data is returned encrypted with the public key of the Inquisitor.
 The bodies of POST requests must be signed by the private key of the Actor, which must have a permission level of at least (2) Write.

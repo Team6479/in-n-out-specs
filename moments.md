@@ -13,7 +13,7 @@ If a new Moment is submitted with an invalid MID, the server must give a respons
 When a new Moment is submitted with a valid MID, if an existing Moment has that MID,
 the Server must reject the request with a response code of 409 CONFLICT,
 at which point the Client may assign the Moment a new MID and re-submit.
-Collision is highly unlikely with such large numbers. However, implementations must be able to handle such occurances.
+Collision is highly unlikely with such large numbers. However, implementations must be able to handle such occurrences.
 
 ## Immutability
 Moments are immutable. Any data uploaded is permanently accessible to any Entity with the Read permission level. Be careful.
@@ -154,7 +154,7 @@ A String with the location of the Session, as follows:
 * `home` - Working from home outside of a formal meeting
 * other - An officially scheduled meeting; for versatility, names are not standardized, but should remain consistent.
 
-For those used spegifically by Team 6479, see [Locations](6479/locations.md).
+For those used specifically by Team 6479, see [Locations](6479/locations.md).
 
 #### Legality
 Since Characters cannot have two simultaneous sessions, if a Character signs in more than once before signing out,
@@ -187,7 +187,7 @@ This should generally be used if someone was actually there on a given day but l
 The Data block is ignored.
 
 #### Legality
-If the Character is individually signed out after their Session being cancelled but before their next sign-in, that sign-out supercedes the cancellation
+If the Character is individually signed out after their Session being cancelled but before their next sign-in, that sign-out supersedes the cancellation
 and the cancellation event is considered Illegal. A cancellation event is otherwise Illegal according to the same standards as a sign-out event.
 
 ### Conclude Meeting
