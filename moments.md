@@ -98,10 +98,10 @@ Event Name: `name`
 Sets the human-readable name of the Character.
 
 #### Data
-A String containing the new human-readable name of the Character.
+A String containing the new human-readable name of the Character, or null if the Character's name is to be unset.
 
 #### Legality
-This will be considered Illegal if the specified name does not match the following RegEx: `(\w|\ )+` (only alphanumeric and space characters)
+This will be considered Illegal if the specified name is non-null but does not match the following RegEx: `(\w|\ )*` (only alphanumeric and space characters)
 
 ### Set Public Key
 Event Name: `pubkey`
@@ -109,10 +109,12 @@ Event Name: `pubkey`
 Sets the public key of the Character. The name and email address of the key will be ignored.
 
 #### Data
-A String containing the new ascii-armored OpenPGP public key of the Character.
+A String containing the new ascii-armored OpenPGP public key of the Character, or null if the public key is to be unset.
 
 #### Legality
-This will be considered Illegal if the key cannot be parsed by [OpenPGP.js](https://openpgpjs.org).
+This will be considered Illegal if the key is non-null but cannot be parsed by [OpenPGP.js](https://openpgpjs.org).
+
+This will also be considered Illegal if the Actor did not have [permission](perms.md) to set the public key of the Character.
 
 ### Set Private Key
 Event Name: `privkey`
@@ -120,38 +122,27 @@ Event Name: `privkey`
 Sets the private key of the Character.
 
 #### Data
-A String containing the new ascii-armored, encrypted OpenPGP private key of the Character.
+A String containing the new ascii-armored, encrypted OpenPGP private key of the Character, or null if the private key is to be unset.
 
 Since this will (counterintuitively) be publicly accessible, we highly recommend using a strong password.
 
 #### Legality
-If the specified key cannot be parsed by [OpenPGP.js](https://openpgpjs.org), or if it is not password-encrypted, it will be considered Illegal.
-
-### Remove Private Key
-Event Name: `rm-privkey`
-
-Makes the private key of the Character inaccessible to the public.
-
-It is important to note that while it may not be publicly accessible, it is still accessible to any Entity with the Read permission level.
-Moments are immutable, so there is no way around this.
-
-#### Data
-The Data block is ignored.
-
-#### Legality
-This will be considered Illegal if the Character already did not have a private key.
+If the specified key is non-null but cannot be parsed by [OpenPGP.js](https://openpgpjs.org), it will be considered Illegal.
 
 ### Grant Permission Level
 Event Name: `grant`
 
 Grants a permission level to the Character.
 
+Note that this may promote or demote the Character.
+
 #### Data
 The permission level to grant, as an integer.
 
 #### Legality
 If the specified permission level is not valid (e.g. `-1` or `17`),
-or if the Actor does not have the required permission level (see [Permissions](perms.md)), it will be considered Illegal.
+or if the Actor does not have the required permission level (see [Permissions](perms.md)),
+it will be considered Illegal.
 
 ### Sign In
 Event Name: `signin`
