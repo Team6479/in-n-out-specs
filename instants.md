@@ -7,10 +7,13 @@ When requested, an Instant is returned in the following format:
   "entities": {
     "eid": { ... },
     ...
-  }
+  },
+  "latest": 0
 }
 ```
-The format for each individual Entity is described in [Entities](#entities)
+The format for each individual Entity is described in [Entities](#entities).
+
+Latest is the UNIX timestamp in seconds of the most recent Moment.
 
 ## Entities
 Each Entity's data within the Instant is returned in the following format:
