@@ -187,8 +187,7 @@ This should generally be used if someone was actually there on a given day but l
 The Data block is ignored.
 
 #### Legality
-If the Character is individually signed out after their Session being cancelled but before their next sign-in, that sign-out supersedes the cancellation
-and the cancellation event is considered Illegal. A cancellation event is otherwise Illegal according to the same standards as a sign-out event.
+A cancellation event is Illegal according to the same standards as a sign-out event.
 
 ### Conclude Meeting
 Event Name: `conclude`
