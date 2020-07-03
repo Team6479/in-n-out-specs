@@ -36,7 +36,6 @@ See [Versions](versions.md) for more info on the field `v`.
 
 Note that `data` may contain any variable type, as defined by the Event.
 Even if it is ignored, it must still be present. We recommend using `null` in such cases.
-If `data` is of the incorrect type or otherwise does not meet the Event's specifications, a code of 422 UNPROCESSABLE ENTITY will be returned.
 
 ### Malformed Moments
 Any Moment submitted that does not adhere to the above format may be safely ignored.
@@ -45,6 +44,9 @@ The Server must return an response code of 400 BAD REQUEST upon its submission.
 ### Illegal Moments
 Moments that follow the above structure but contain illegal or otherwise bad data must be added to the Timeline.
 However, they must be ignored when building an Instant.
+
+If `data` is of the incorrect type or otherwise does not meet the Event's specifications,
+the Moment in question will be considered Illegal.
 
 Unless stated otherwise, all Moments are considered Illegal if the Actor or Character references an Entity which does not exist,
 or if they do not strictly follow the particular Event's Data format.
