@@ -14,7 +14,7 @@ If the required permissions of a particular endpoint are not met, the server wil
 | `/moment/`*`MID`* | GET | Gets the given Moment by its MID, unsigned and in JSON format | [Moments](moments.md) |
 | `/moment/`*`MID`* | POST | Creates a new Moment with the given MID | [Moments](moments.md) |
 | `/instant` | GET | Gets the full JSON data of an current Instant | [Instants](instants.md) |
-| `/instant/`*`EID`* | GET | Gets the full JSON data associated with a given Entity | [Entities](instants.md#entities) |
-| `/instant/`*`EID`*`/name` | GET | Gets the real name of an Entity | [Entities](instants.md#entities) |
-| `/instant/`*`EID`*`/key/pub` | GET | Gets the public key of a given Entity; this endpoint is public | [Entities](instants.md#entities) |
-| `/instant/`*`EID`*`/key/priv` | GET | Gets the most recent private key of a given Entity; counterintuitively, this endpoint is public | [Entities](instants.md#entities) |
+| `/instant/entities/`*`EID`* | GET | Gets the full JSON data associated with a given Entity | [Entities](instants.md#entities) |
+| `/instant/entities/`*`EID`*`/name` | GET | Gets the real name of an Entity | [Entities](instants.md#entities) |
+| `/instant/entities/`*`EID`*`/key/pub` | GET | Gets the public key of a given Entity; this endpoint is public | [Entities](instants.md#entities) |
+| `/instant/entities/`*`EID`*`/key/priv` | GET | Gets the most recent private key of a given Entity; counterintuitively, this endpoint is public | [Entities](instants.md#entities) |
