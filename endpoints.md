@@ -3,7 +3,7 @@ This document serves as a quick reference for the endpoints, along with their re
 All endpoint URLs are relative to `/api/v1`, so if the URL is listed as `/version`, that expands to `/api/v1/version`.
 
 With the exception of `/version` and `/instant/`*`EID`*`/key/*`, GET requests take at least the URL parameter `inq` (the id of the Inquisitor, which must have a permission level of at least 1) and their data is returned encrypted with the public key of the Inquisitor.
-The bodies of POST requests must be signed by the private key of the Actor, which must have a permission level of at least (2) Write.
+The bodies of POST requests must be clearsigned by the private key of the Actor, which must have a permission level of at least (2) Write.
 
 If the required permissions of a particular endpoint are not met, the server will response with a code of 403. Any permission level higher than that which is required can also access the endpoint in the same manner.
 
